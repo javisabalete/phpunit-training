@@ -1,8 +1,8 @@
 FROM phpunit/phpunit:6.0.6
 MAINTAINER Marçal Berga <hola@marcalberga.cat>
-RUN apk --update add --no-cache openssh bash \
-RUN sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
-RUN echo "root:root" | chpasswd \
+RUN apk --update add --no-cache openssh bash
+RUN sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config
+RUN echo "root:root" | chpasswd
 RUN rm -rf /var/cache/apk/*
 RUN sed -ie 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
 RUN sed -ri 's/#HostKey \/etc\/ssh\/ssh_host_key/HostKey \/etc\/ssh\/ssh_host_key/g' /etc/ssh/sshd_config
