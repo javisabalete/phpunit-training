@@ -8,7 +8,7 @@ Using new PHPUnit 6.* and Symfony 4.0.*
 - PHP 7.1^
 
 ### Getting started with project:
-Run ```composer install``` for downloading dependencies
+Run ```docker run --rm --interactive --tty --volume $PWD:/app --user $(id -u):$(id -g) composer install``` for downloading dependencies
 
 There is no views in project, it is only phpunit ready.
 
